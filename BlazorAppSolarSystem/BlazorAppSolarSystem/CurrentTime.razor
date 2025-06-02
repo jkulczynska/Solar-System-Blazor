@@ -1,0 +1,32 @@
+﻿@* Komponent zegara pobrany z internetu i lekko zmodyfikowany.
+   Służy jako dodatek do strony Solar System, nie jest mojego autorstwa. *@
+
+<div style="position: fixed; top: 10px; right: 20px; background-color: #231f2e; color: white; padding: 8px 12px; border-radius: 8px; font-family: Arial; z-index: 1000;">
+@czas.ToString("HH:mm:ss")
+</div>
+
+
+@code {
+    private DateTime czas = DateTime.Now;
+    private System.Timers.Timer? timer;
+
+    protected override void OnInitialized()
+    {
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += (sender, e) =>
+        {
+            czas = DateTime.Now;
+            InvokeAsync(StateHasChanged);
+        };
+        timer.Start();
+    }
+
+    public void Dispose()
+    {
+        if (timer != null)
+        {
+            timer.Stop();
+            timer.Dispose();
+        }
+    }
+}

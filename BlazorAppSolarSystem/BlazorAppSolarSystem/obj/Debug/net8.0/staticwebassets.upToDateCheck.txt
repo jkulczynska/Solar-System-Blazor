@@ -1,0 +1,13 @@
+wwwroot\css\responsive.css
+wwwroot\css\style.css
+wwwroot\index.html
+wwwroot\planets\earth.png
+wwwroot\planets\jowisz.png
+wwwroot\planets\mars.png
+wwwroot\planets\mercury.png
+wwwroot\planets\neptune.png
+wwwroot\planets\saturn.png
+wwwroot\planets\sun.png
+wwwroot\planets\uran.png
+wwwroot\planets\wenus.png
+wwwroot\solar.html
