@@ -26,9 +26,10 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GREEN_DESERT_0D86B4D10 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "."             
-          api_location: ""              
-          output_location: "wwwroot"    
+          app_location: "wwwroot"           # <-- Tu są Twoje index.html, css itd.
+          output_location: ""               # <-- Nie trzeba kompilować, bo to czysty HTML
+          api_location: ""                  # <-- Nie używasz API
+
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
